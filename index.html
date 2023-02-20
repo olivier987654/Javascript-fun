@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cybersecurity Events Monitor</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <h1>Welcome to the Cybersecurity Events Monitor</h1>
+    <p>Real-time information on cybersecurity events from around the world.</p>
+    <div id="event-list">
+      <!-- Your real-time cybersecurity event data will go here -->
+    </div>
+  </body>
+
+  <script>
+    // Get a reference to the event list div element
+    const eventList = document.getElementById("event-list");
+  
+    // Define the OTX API endpoint to fetch cybersecurity event data
+    const otxUrl = "https://otx.alienvault.com/api/v1/pulses/subscribed?limit=10";
+  
+    // Define the OTX API key (replace with your own API key)
+    const otxApiKey = "your_api_key_here";
+  
+    // Fetch the event data from the OTX API endpoint
+    fetch(otxUrl, { headers: { "X-OTX-API-KEY": otxApiKey } })
+      .then(response => response.json())
+      .then(data => {
+        // Loop through the event data and create a list of events to display on the webpage
+        const events = data.results.map(event => {
+          return `<li>${event.name}: ${event.description} (${event.created})</li>`;
+        });
+  
+        // Insert the list of events into the event list div element
+        eventList.innerHTML = `<ul>${events.join("")}</ul>`;
+      })
+      .catch(error => {
+        // Handle any errors that may occur during the fetch request
+        eventList.innerHTML = `<p>Error fetching cybersecurity event data: ${error.message}</p>`;
+      });
+  </script>
+  
+  
+
+</html>
