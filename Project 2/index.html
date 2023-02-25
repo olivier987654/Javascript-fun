@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>   
+    </style>
+    <title>Weather App</title>
+  </head>
+  <body>
+    <h1>Weather App</h1>
+    <label for="city-input">Enter city name:</label>
+    <input type="text" id="city-input" />
+    <button id="submit-button">Get weather</button>
+    <div id="weather-info"></div>
+  </body>
+  <script>
+    const apiKey = "bf7593bce7d11181ee31f0b29fdca92e";
+const submitButton = document.getElementById("submit-button");
+const cityInput = document.getElementById("city-input");
+const weatherInfo = document.getElementById("weather-info");
+
+submitButton.addEventListener("click", () => {
+  const city = cityInput.value;
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+  fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      const temperature = data.main.temp;
+      const description = data.weather[0].description;
+      weatherInfo.innerHTML = `Temperature: ${temperature}°C<br>Description: ${description}`;
+    })
+    .catch(error => {
+      console.error(error);
+      weatherInfo.innerHTML = "An error occurred while fetching weather data.";
+    });
+});
+
+  </script>
+</html>

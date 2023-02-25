@@ -1,0 +1,90 @@
+body {
+    background-color: #f7f7f7;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+  
+  .container {
+    max-width: 375px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  
+  .card-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .card-header h2 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+  }
+  
+  .card-header img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  .form-group input[type="text"] {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+    font-size: 16px;
+  }
+  
+  .form-group button[type="submit"] {
+    background-color: #007aff;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
+  .weather-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .weather-info img {
+    width: 60px;
+    height: 60px;
+  }
+  
+  .weather-info h3 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 600;
+  }
+  
+  .weather-info p {
+    margin: 0;
+    font-size: 16px;
+  }
+  
